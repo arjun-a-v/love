@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Love Story ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    overflow-x: hidden;
+    background-color: #fff0f5;
+  }
+
+  section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    transition: background 1s ease-in-out;
+  }
+
+  h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    animation: fadeIn 2s ease-in-out;
+  }
+
+  p {
+    font-size: 1.3rem;
+    max-width: 650px;
+    animation: fadeIn 3s ease-in-out;
+  }
+
+  /* Typewriter effect */
+  .typewriter {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 2px solid white;
+    white-space: nowrap;
+    animation: typing 4s steps(30, end), blink 0.8s infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  @keyframes blink {
+    50% { border-color: transparent }
+  }
+
+  /* Fade overlay for smooth blending */
+  section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.3));
+    pointer-events: none;
+  }
+
+  section + section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,0.3));
+    pointer-events: none;
+  }
+
+  .proposal-btn {
+    background: white;
+    color: #ff4d79;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    padding: 15px 40px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: transform 0.3s, background-color 0.3s;
+    z-index: 2;
+  }
+
+  .proposal-btn:hover {
+    transform: scale(1.1);
+    background-color: #ffe6eb;
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  /* Floating hearts animation */
+  .heart {
+    position: fixed;
+    bottom: -10px;
+    font-size: 20px;
+    color: rgba(255, 182, 193, 0.7);
+    animation: floatUp 8s linear infinite;
+    z-index: 0;
+  }
+
+  @keyframes floatUp {
+    0% {transform: translateY(0) scale(1);}
+    100% {transform: translateY(-110vh) scale(1.5);}
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    h1 { font-size: 2.5rem; }
+    p { font-size: 1rem; }
+    .proposal-btn { font-size: 1.5rem; padding: 10px 25px; }
+  }
+</style>
+</head>
+<body>
+
+<section style="background: linear-gradient(to right, #ff9a9e, #fecfef);">
+  <h1 class="typewriter">Our Love Story ❤️</h1>
+  <p>It all began the day we met.....1/9/2022</p>
+</section>
+
+<section style="background: linear-gradient(to right, #fbc2eb, #a6c1ee);">
+  <h1>Every Moment With You 🌸</h1>
+  <p>From our late-night talks to the way you laugh, every second with you is magic.</p>
+</section>
+
+<section style="background: linear-gradient(to right, #fad0c4, #ffd1ff); color: #333;">
+  <h1>You Are My Forever 🌟</h1>
+  <p>No matter where life takes us, I will always choose you… a thousand times over.</p>
+</section>
+
+<section style="background: linear-gradient(to right, #f6d365, #fda085);">
+  <h1>The Big Question 💍</h1>
+  <p>So here it is, the most important question of my life...</p>
+  <button class="proposal-btn" onclick="propose()">Do You Love Me..?</button>
+</section>
+
+<audio id="bgMusic" src="https://www.bensound.com/bensound-music/bensound-romantic.mp3"></audio>
+
+<script>
+function createHeart() {
+  const heart = document.createElement('div');
+  heart.className = 'heart';
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.animationDuration = (Math.random() * 4 + 5) + 's';
+  heart.innerHTML = '❤️';
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 8000);
+}
+
+setInterval(createHeart, 600);
+
+function propose() {
+  document.querySelector('body').innerHTML = `
+    <section style="background: linear-gradient(to right, #ff758c, #ff7eb3);">
+      <h1 style="font-family: 'Great Vibes', cursive; font-size: 4rem;">💖 Love You Forever....! 💖</h1>
+      <p style="font-size: 1.5rem;">Pathuuuuu... 💍</p>
+      <img src="https://media.tenor.com/Q54z1G6p1o8AAAAi/cute-love.gif" alt="love" />
+    </section>
+  `;
+  document.getElementById("bgMusic").play();
+}
+</script>
+</body>
+</html>
+
+
+
